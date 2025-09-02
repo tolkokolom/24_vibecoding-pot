@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     
     private func setupUI() {
         // Configure main UI elements
-        titleLabel.text = "🎯 Haptic Feedback Tester"
+        titleLabel.text = "VIBECOOODEEEEEEERS NAHUUUUY"
         titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
