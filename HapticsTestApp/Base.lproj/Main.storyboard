@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HapticsTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOb-pN-g3T">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uY-Xt-geL">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="9QN-3h-8aS">
+                                                <rect key="frame" x="20" y="20" width="353" height="719"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎯 Haptic Feedback Tester" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bK-fZ-gUo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="33.666666666666664"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore all iOS haptic feedback types. Each button demonstrates different haptic patterns that you can feel on your iPhone." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zA-hU-7dL">
+                                                        <rect key="frame" x="0.0" y="57.666666666666664" width="353" height="38.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BQd-UD-eAc">
+                                                        <rect key="frame" x="0.0" y="120" width="353" height="32"/>
+                                                        <segments>
+                                                            <segment title="Impact"/>
+                                                            <segment title="Notification"/>
+                                                            <segment title="Selection"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="categoryChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="DhZ-bP-fTK"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kGN-hG-VaI">
+                                                        <rect key="frame" x="0.0" y="175" width="353" height="544"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="9QN-3h-8aS" firstAttribute="top" secondItem="2uY-Xt-geL" secondAttribute="top" constant="20" id="62s-4B-3a4"/>
+                                            <constraint firstAttribute="trailing" secondItem="9QN-3h-8aS" secondAttribute="trailing" constant="20" id="HVd-tC-V8a"/>
+                                            <constraint firstItem="9QN-3h-8aS" firstAttribute="leading" secondItem="2uY-Xt-geL" secondAttribute="leading" constant="20" id="qhU-uO-bcP"/>
+                                            <constraint firstAttribute="bottom" secondItem="9QN-3h-8aS" secondAttribute="bottom" constant="20" id="uq9-qs-HrD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2uY-Xt-geL" firstAttribute="width" secondItem="hOb-pN-g3T" secondAttribute="width" id="7mR-bI-c7c"/>
+                                    <constraint firstItem="2uY-Xt-geL" firstAttribute="top" secondItem="hOb-pN-g3T" secondAttribute="top" id="8WR-gP-ZJD"/>
+                                    <constraint firstAttribute="bottom" secondItem="2uY-Xt-geL" secondAttribute="bottom" id="FY5-BG-MBF"/>
+                                    <constraint firstItem="2uY-Xt-geL" firstAttribute="leading" secondItem="hOb-pN-g3T" secondAttribute="leading" id="PSk-5r-DpP"/>
+                                    <constraint firstAttribute="trailing" secondItem="2uY-Xt-geL" secondAttribute="trailing" id="Sjo-PN-ZtV"/>
+                                    <constraint firstItem="2uY-Xt-geL" firstAttribute="height" secondItem="hOb-pN-g3T" secondAttribute="height" priority="250" id="zKE-Qp-vOH"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hOb-pN-g3T" secondAttribute="trailing" id="4v9-z1-9LC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hOb-pN-g3T" secondAttribute="bottom" id="PQh-Q0-gzU"/>
+                            <constraint firstItem="hOb-pN-g3T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bGi-Hh-OKJ"/>
+                            <constraint firstItem="hOb-pN-g3T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xNz-xF-3AQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="2uY-Xt-geL" id="Q3K-eG-sHg"/>
+                        <outlet property="descriptionLabel" destination="3zA-hU-7dL" id="aOK-Lg-Kii"/>
+                        <outlet property="scrollView" destination="hOb-pN-g3T" id="LGd-zz-WJK"/>
+                        <outlet property="segmentedControl" destination="BQd-UD-eAc" id="bMP-Oc-GdK"/>
+                        <outlet property="stackView" destination="kGN-hG-VaI" id="Hwg-Jb-cPw"/>
+                        <outlet property="titleLabel" destination="7bK-fZ-gUo" id="e6k-eE-HKz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
