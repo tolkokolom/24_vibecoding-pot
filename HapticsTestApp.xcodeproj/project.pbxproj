@@ -3,26 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C9F3622BB4CC7A611D59CAB /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3C6D73248D64B7B73584E6 /* ComposeViewController.swift */; };
 		64FAB4D87EDAF6B1B3AA16D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7B9BF229FB037E9D30E18A /* SceneDelegate.swift */; };
 		6B2ECE4B9D20A802FD4D470C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2F30CFC4E366C1DFD46C2E /* LaunchScreen.storyboard */; };
 		6BFA4847E3CD8F8200392EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F3D9BBF3C6198F353E3EBD /* Assets.xcassets */; };
 		84CCFFA04A12E423F8ADBBED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFFFD470ADADBD8D4A199D7 /* AppDelegate.swift */; };
 		BA149BED48776C0227FF8E06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1E4DDD19CA50445BB8B933 /* Main.storyboard */; };
+		D54A3D3013FEF1E3982C3F45 /* GlowBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DBD89D648EBCD5ED73E51C /* GlowBorderView.swift */; };
 		F0F6395039FC28A981DEA30E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F42D9305D0C083C3EABB14 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C1D274CFB9843AD100CBF92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3E229322BD7C59A8A64A42C6 /* HapticsTestApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HapticsTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E229322BD7C59A8A64A42C6 /* HapticsTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapticsTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F3D9BBF3C6198F353E3EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A87AE85B3B64F7FF5DF9D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5B7B9BF229FB037E9D30E18A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7A3C6D73248D64B7B73584E6 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		A0A78926A9B4E235C1816BFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6F42D9305D0C083C3EABB14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5DBD89D648EBCD5ED73E51C /* GlowBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorderView.swift; sourceTree = "<group>"; };
 		EAFFFD470ADADBD8D4A199D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,6 +44,8 @@
 			children = (
 				EAFFFD470ADADBD8D4A199D7 /* AppDelegate.swift */,
 				48F3D9BBF3C6198F353E3EBD /* Assets.xcassets */,
+				7A3C6D73248D64B7B73584E6 /* ComposeViewController.swift */,
+				E5DBD89D648EBCD5ED73E51C /* GlowBorderView.swift */,
 				4A87AE85B3B64F7FF5DF9D92 /* Info.plist */,
 				EC2F30CFC4E366C1DFD46C2E /* LaunchScreen.storyboard */,
 				DE1E4DDD19CA50445BB8B933 /* Main.storyboard */,
@@ -102,7 +108,6 @@
 			);
 			mainGroup = 11B5FF4DB97CBAD3155E2321;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -130,6 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84CCFFA04A12E423F8ADBBED /* AppDelegate.swift in Sources */,
+				1C9F3622BB4CC7A611D59CAB /* ComposeViewController.swift in Sources */,
+				D54A3D3013FEF1E3982C3F45 /* GlowBorderView.swift in Sources */,
 				64FAB4D87EDAF6B1B3AA16D4 /* SceneDelegate.swift in Sources */,
 				F0F6395039FC28A981DEA30E /* ViewController.swift in Sources */,
 			);
@@ -282,6 +289,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PG25FCKNA5;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = HapticsTestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -305,6 +313,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PG25FCKNA5;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = HapticsTestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

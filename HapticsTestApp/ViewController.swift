@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     
+    // Decorative background glow (non-interactive)
+    private let backgroundGlow = GlowBorderView()
+    private let composeButton = UIButton(type: .system)
+    
     // MARK: - Haptic Properties
     
     /// Impact Feedback Generators
@@ -41,9 +45,73 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDecor()
         setupUI()
         setupHaptics()
         createHapticControls()
+        setupComposeButton()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        backgroundGlow.startAnimating()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        backgroundGlow.stopAnimating()
+    }
+    
+    private func setupDecor() {
+        backgroundGlow.translatesAutoresizingMaskIntoConstraints = false
+        backgroundGlow.isUserInteractionEnabled = false
+        backgroundGlow.alpha = 0.6
+        backgroundGlow.strokeWidth = 12
+        backgroundGlow.cornerRadius = 40
+        backgroundGlow.contentInset = 0
+        // Put on top of all content
+        view.addSubview(backgroundGlow)
+        backgroundGlow.layer.zPosition = 1000
+        NSLayoutConstraint.activate([
+            backgroundGlow.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundGlow.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundGlow.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundGlow.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    private func setupComposeButton() {
+        composeButton.translatesAutoresizingMaskIntoConstraints = false
+        var config = UIButton.Configuration.filled()
+        config.baseBackgroundColor = .systemBlue
+        config.baseForegroundColor = .white
+        config.cornerStyle = .capsule
+        composeButton.configuration = config
+        composeButton.setImage(UIImage(systemName: "square.and.pencil"), for: .normal)
+        composeButton.accessibilityLabel = "Compose"
+        composeButton.addTarget(self, action: #selector(openComposer), for: .touchUpInside)
+        view.addSubview(composeButton)
+        let guide = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            composeButton.widthAnchor.constraint(equalToConstant: 56),
+            composeButton.heightAnchor.constraint(equalToConstant: 56),
+            composeButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
+            composeButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -20)
+        ])
+    }
+    
+    @objc private func openComposer() {
+        let composer = ComposeViewController()
+        composer.modalPresentationStyle = .overFullScreen
+        composer.modalTransitionStyle = .coverVertical
+        composer.onSend = { [weak self] _ in
+            guard let self else { return }
+            if self.isHapticsEnabled {
+                self.notificationFeedback.notificationOccurred(.success)
+            }
+        }
+        present(composer, animated: true)
+        if isHapticsEnabled { lightImpactFeedback.impactOccurred() }
     }
     
     // MARK: - Setup Methods
